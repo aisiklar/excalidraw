@@ -109,6 +109,7 @@ export const getPolygonShape = (
   const center: Point = [cx, cy];
 
   let data: Polygon = [];
+  console.log("in getPolygonShape funct... ");
 
   if (element.type === "diamond") {
     data = [
@@ -137,6 +138,7 @@ export const getEllipseShape = (
   element: ExcalidrawEllipseElement,
 ): GeometricShape => {
   const { width, height, angle, x, y } = element;
+  // console.log("in getEllipseShape funct... ");
 
   return {
     type: "ellipse",
@@ -270,6 +272,7 @@ export const getClosedCurveShape = (
   const polygonPoints = pointsOnBezierCurves(points, 10, 5).map((p) =>
     transform(p),
   );
+  console.log("polygonPoints: ", polygonPoints);
 
   return {
     type: "polygon",
